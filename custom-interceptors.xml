@@ -1,0 +1,38 @@
+<custom-interceptors>
+    <custom-interceptor>
+        <interceptor-class-name>com.singularity.KafkaMarkerMethodInterceptor</interceptor-class-name>
+        <match-class type="matches-class">
+            <name filter-type="equals">com.axway.streams.publisher.httppoller.task.consumer.PublisherHttpPollerTaskConsumer</name>
+        </match-class>
+        <match-method>
+            <name>getvalueCallAppD</name>
+        </match-method>
+    </custom-interceptor>
+    <custom-interceptor>
+        <interceptor-class-name>reactor.core.publisher.FluxIterable$IterableSubscription</interceptor-class-name>
+        <match-class type="matches-class">
+            <name filter-type="equals">com.axway.streams.publisher.httppoller.task.consumer.PublisherHttpPollerTaskConsumer</name>
+        </match-class>
+        <match-method>
+            <name>fastPath</name>
+        </match-method>
+    </custom-interceptor>
+    <custom-interceptor>
+        <interceptor-class-name>com.singularity.KafkaMarkerMethodInterceptor</interceptor-class-name>
+        <match-class type="matches-class">
+            <name filter-type="equals">com.axway.streams.publisher.httppoller.task.consumer.PublisherHttpPollerTaskConsumer</name>
+        </match-class>
+        <match-method>
+            <name>slowPath</name>
+        </match-method>
+    </custom-interceptor>
+    <custom-interceptor>
+        <interceptor-class-name>com.singularity.KafkaMarkerMethodInterceptor</interceptor-class-name>
+        <match-class type="matches-class">
+            <name filter-type="equals">com.axway.streams.publisher.httppoller.task.consumer.PublisherHttpPollerTaskConsumer</name>
+        </match-class>
+        <match-method>
+            <name>poll</name>
+        </match-method>
+    </custom-interceptor>
+</custom-interceptors>
